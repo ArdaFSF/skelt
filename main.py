@@ -488,5 +488,5 @@ class SatinAlindiButton(discord.ui.Button):
         await asyncio.sleep(20)
         await interaction.channel.delete()
 
-
+print("TOKEN:", TOKEN)
 bot.run(TOKEN)
