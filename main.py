@@ -5,14 +5,12 @@ from sms import SendSms
 import asyncio
 import threading
 import time
-import os
-from dotenv import load_dotenv  
 from keep_alive import keep_alive
+import os
+from dotenv import load_dotenv
 
 keep_alive()
-
 load_dotenv()
-TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -488,5 +486,4 @@ class SatinAlindiButton(discord.ui.Button):
         await asyncio.sleep(20)
         await interaction.channel.delete()
 
-print("TOKEN:", TOKEN)
-bot.run(TOKEN)
+bot.run(os.getenv("TOKEN"))
